@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,199 +7,267 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #444;
         }
         .question {
-            margin-bottom: 20px;
-        }
-        .question label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .question input, .question select {
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .question input[type="radio"], .question input[type="checkbox"] {
-            width: auto;
-            margin-right: 10px;
+            margin: 20px 0;
         }
         .recommendations {
-            background-color: #e1f7d5;
-            padding: 15px;
+            margin-top: 30px;
+            padding: 20px;
+            background: #e9f5e9;
+            border: 1px solid #c4e5c4;
             border-radius: 5px;
-            margin-top: 20px;
-            display: none;
         }
-        .submit-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
             font-size: 16px;
+            color: #fff;
+            background: #28a745;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
+        button:hover {
+            background: #218838;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Опрос: Качество сна</h1>
+        <form id="survey-form">
+            <!-- Вопрос 1 -->
+            <div class="question">
+                <label>Ваш пол:</label><br>
+                <input type="radio" name="gender" value="Мужской"> Мужской<br>
+                <input type="radio" name="gender" value="Женский"> Женский
+            </div>
 
-    <h1>Опрос: Качество сна и пути его улучшения</h1>
-    
-    <form id="sleepSurvey">
-        <div class="question">
-            <label for="gender">Ваш пол:</label>
-            <input type="radio" id="male" name="gender" value="Мужской"> Мужской
-            <input type="radio" id="female" name="gender" value="Женский"> Женский
+            <!-- Вопрос 2 -->
+            <div class="question">
+                <label>Ваш возраст:</label><br>
+                <input type="radio" name="age" value="До 18 лет"> До 18 лет<br>
+                <input type="radio" name="age" value="18–24 года"> 18–24 года<br>
+                <input type="radio" name="age" value="25–30 лет"> 25–30 лет<br>
+                <input type="radio" name="age" value="31 год и старше"> 31 год и старше
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="question">
+                <label>Вы студент или работаете?</label><br>
+                <input type="radio" name="status" value="Студент"> Студент<br>
+                <input type="radio" name="status" value="Работающий студент"> Работающий студент<br>
+                <input type="radio" name="status" value="Работающий"> Работающий
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="question">
+                <label>Сколько часов сна вы обычно получаете в сутки?</label><br>
+                <input type="radio" name="sleep_hours" value="Менее 5 часов"> Менее 5 часов<br>
+                <input type="radio" name="sleep_hours" value="5–6 часов"> 5–6 часов<br>
+                <input type="radio" name="sleep_hours" value="6–7 часов"> 6–7 часов<br>
+                <input type="radio" name="sleep_hours" value="7–8 часов"> 7–8 часов<br>
+                <input type="radio" name="sleep_hours" value="Более 8 часов"> Более 8 часов
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="question">
+                <label>Как часто вы ложитесь спать в одно и то же время?</label><br>
+                <input type="radio" name="sleep_schedule" value="Всегда"> Всегда<br>
+                <input type="radio" name="sleep_schedule" value="Часто"> Часто<br>
+                <input type="radio" name="sleep_schedule" value="Редко"> Редко<br>
+                <input type="radio" name="sleep_schedule" value="Никогда"> Никогда
+            </div>
+
+            <!-- Вопрос 6 -->
+            <div class="question">
+                <label>Какие факторы мешают вам засыпать или спать спокойно? (можно выбрать несколько вариантов)</label><br>
+                <input type="checkbox" name="factors" value="Стресс или тревога"> Стресс или тревога<br>
+                <input type="checkbox" name="factors" value="Шум"> Шум<br>
+                <input type="checkbox" name="factors" value="Свет"> Свет<br>
+                <input type="checkbox" name="factors" value="Гаджеты"> Гаджеты<br>
+                <input type="checkbox" name="factors" value="Кофеин или алкоголь"> Кофеин или алкоголь
+            </div>
+
+            <!-- Вопрос 7 -->
+            <div class="question">
+                <label>Что вы обычно делаете перед сном?</label><br>
+                <input type="radio" name="before_sleep" value="Работа/учёба"> Работа/учёба<br>
+                <input type="radio" name="before_sleep" value="Чтение"> Чтение<br>
+                <input type="radio" name="before_sleep" value="Гаджеты"> Гаджеты<br>
+                <input type="radio" name="before_sleep" value="Расслабление"> Расслабление<br>
+                <input type="radio" name="before_sleep" value="Спорт"> Спорт
+            </div>
+
+            <!-- Вопрос 8 -->
+            <div class="question">
+                <label>Как бы вы оценили качество вашего сна?</label><br>
+                <input type="radio" name="sleep_quality" value="1–2"> 1–2 (Очень плохо)<br>
+                <input type="radio" name="sleep_quality" value="3"> 3 (Низкое)<br>
+                <input type="radio" name="sleep_quality" value="4–5"> 4–5 (Среднее)<br>
+                <input type="radio" name="sleep_quality" value="6–7"> 6–7 (Хорошее)<br>
+                <input type="radio" name="sleep_quality" value="8–10"> 8–10 (Отличное)
+            </div>
+
+            <!-- Вопрос 9 -->
+            <div class="question">
+                <label>Испытываете ли вы головную боль после пробуждения?</label><br>
+                <input type="radio" name="headache" value="Редко"> Редко<br>
+                <input type="radio" name="headache" value="Иногда"> Иногда<br>
+                <input type="radio" name="headache" value="Часто"> Часто<br>
+                <input type="radio" name="headache" value="Очень часто"> Очень часто
+            </div>
+
+            <button type="button" onclick="generateRecommendations()">Получить рекомендации</button>
+        </form>
+
+        <div id="recommendations" class="recommendations" style="display: none;">
+            <h2>Ваши рекомендации</h2>
+            <div id="recommendation-content"></div>
         </div>
-
-        <div class="question">
-            <label for="age">Ваш возраст:</label>
-            <select id="age" name="age">
-                <option value="До 18 лет">До 18 лет</option>
-                <option value="18-24 года">18–24 года</option>
-                <option value="25-30 лет">25–30 лет</option>
-                <option value="31 год и старше">31 год и старше</option>
-            </select>
-        </div>
-
-        <div class="question">
-            <label for="workStatus">Вы студент или работаете?</label>
-            <input type="radio" id="student" name="workStatus" value="Студент"> Студент
-            <input type="radio" id="workingStudent" name="workStatus" value="Работающий студент"> Работающий студент
-            <input type="radio" id="working" name="workStatus" value="Работающий"> Работающий
-        </div>
-
-        <div class="question">
-            <label for="sleepDuration">Сколько часов сна вы обычно получаете в сутки?</label>
-            <select id="sleepDuration" name="sleepDuration">
-                <option value="Менее 5 часов">Менее 5 часов</option>
-                <option value="5-6 часов">5–6 часов</option>
-                <option value="6-7 часов">6–7 часов</option>
-                <option value="7-8 часов">7–8 часов</option>
-                <option value="Более 8 часов">Более 8 часов</option>
-            </select>
-        </div>
-
-        <div class="question">
-            <label for="sleepConsistency">Как часто вы ложитесь спать в одно и то же время?</label>
-            <input type="radio" id="always" name="sleepConsistency" value="Всегда"> Всегда
-            <input type="radio" id="often" name="sleepConsistency" value="Часто"> Часто
-            <input type="radio" id="rarely" name="sleepConsistency" value="Редко"> Редко
-            <input type="radio" id="never" name="sleepConsistency" value="Никогда"> Никогда
-        </div>
-
-        <div class="question">
-            <label for="sleepInterruption">Какие факторы мешают вам засыпать или спать спокойно?</label>
-            <input type="checkbox" id="stress" name="sleepInterruption" value="Стресс или тревога"> Стресс или тревога
-            <input type="checkbox" id="noise" name="sleepInterruption" value="Шум"> Шум
-            <input type="checkbox" id="light" name="sleepInterruption" value="Свет"> Свет
-            <input type="checkbox" id="gadgets" name="sleepInterruption" value="Гаджеты"> Гаджеты
-            <input type="checkbox" id="caffeine" name="sleepInterruption" value="Кофеин или алкоголь"> Кофеин или алкоголь
-        </div>
-
-        <div class="question">
-            <label for="preSleepActivity">Что вы обычно делаете перед сном?</label>
-            <input type="radio" id="workStudy" name="preSleepActivity" value="Работа/учёба"> Работа/учёба
-            <input type="radio" id="reading" name="preSleepActivity" value="Чтение"> Чтение
-            <input type="radio" id="gadgets" name="preSleepActivity" value="Гаджеты"> Гаджеты
-            <input type="radio" id="relaxation" name="preSleepActivity" value="Расслабление"> Расслабление
-            <input type="radio" id="sports" name="preSleepActivity" value="Спорт"> Спорт
-        </div>
-
-        <div class="question">
-            <label for="sleepQuality">Как бы вы оценили качество вашего сна?</label>
-            <select id="sleepQuality" name="sleepQuality">
-                <option value="1-2">1–2 (Очень плохо)</option>
-                <option value="3">3 (Низкое)</option>
-                <option value="4-5">4–5 (Среднее)</option>
-                <option value="6-7">6–7 (Хорошее)</option>
-                <option value="8-10">8–10 (Отличное)</option>
-            </select>
-        </div>
-
-        <div class="question">
-            <label for="morningHeadache">Испытываете ли вы головную боль после пробуждения?</label>
-            <input type="radio" id="rarely" name="morningHeadache" value="Редко"> Редко
-            <input type="radio" id="sometimes" name="morningHeadache" value="Иногда"> Иногда
-            <input type="radio" id="often" name="morningHeadache" value="Часто"> Часто
-            <input type="radio" id="veryOften" name="morningHeadache" value="Очень часто"> Очень часто
-        </div>
-
-        <button type="button" class="submit-btn" onclick="generateRecommendations()">Получить рекомендации</button>
-
-    </form>
-
-    <div class="recommendations" id="recommendations">
-        <h2>Рекомендации:</h2>
-        <p>На основе ваших ответов, мы составим персонализированные рекомендации для улучшения качества сна.</p>
     </div>
 
     <script>
         function generateRecommendations() {
-            let recommendations = document.getElementById("recommendations");
-            recommendations.style.display = "block";
+            const form = document.getElementById('survey-form');
+            const data = new FormData(form);
+            const recommendations = [];
 
-            let sleepDuration = document.getElementById("sleepDuration").value;
-            let sleepConsistency = document.querySelector('input[name="sleepConsistency"]:checked') ? document.querySelector('input[name="sleepConsistency"]:checked').value : '';
-            let sleepInterruption = document.querySelectorAll('input[name="sleepInterruption"]:checked');
-            let preSleepActivity = document.querySelector('input[name="preSleepActivity"]:checked') ? document.querySelector('input[name="preSleepActivity"]:checked').value : '';
-            let sleepQuality = document.getElementById("sleepQuality").value;
-            let morningHeadache = document.querySelector('input[name="morningHeadache"]:checked') ? document.querySelector('input[name="morningHeadache"]:checked').value : '';
-
-            let recommendationsText = "";
-
-            // Based on sleep duration
-            if (sleepDuration === "Менее 5 часов") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Очень важно увеличить продолжительность сна. Начните с добавления 15-30 минут каждую неделю, чтобы дать организму время на восстановление. Плохой сон негативно сказывается на физическом и психическом состоянии.</p>";
-            } else if (sleepDuration === "5-6 часов") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Постепенно увеличьте продолжительность сна, желательно до 7-8 часов. Это поможет улучшить восстановление организма и повысить общую продуктивность.</p>";
-            } else if (sleepDuration === "6-7 часов") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Вы в пределах нормы, но можно улучшить качество сна с помощью вечерней расслабляющей активности. Убедитесь, что ваш сон спокойный и непрерывный.</p>";
-            } else if (sleepDuration === "Более 8 часов") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Долгий сон не всегда означает качественный. Убедитесь, что ваш сон глубокий и восстановительный. Попробуйте сократить время перед сном, чтобы улучшить качество сна.</p>";
+            // Рекомендации по полу
+            if (data.get('gender') === 'Мужской') {
+                recommendations.push('Мужчинам рекомендуется уделять внимание физической активности в течение дня и избегать тяжелой пищи перед сном.');
+            } else if (data.get('gender') === 'Женский') {
+                recommendations.push('Женщинам полезно поддерживать регулярный режим сна и расслабляться перед сном, например, с помощью медитации.');
             }
 
-            // Based on sleep consistency
-            if (sleepConsistency === "Никогда") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Рекомендуется установить стабильное время отхода ко сну и подъёма. Это поможет улучшить циркадные ритмы организма и сделает сон более качественным.</p>";
+            // Рекомендации по возрасту
+            if (data.get('age') === 'До 18 лет') {
+                recommendations.push('В подростковом возрасте важно соблюдать режим сна, спать не менее 8 часов в сутки и ограничивать использование гаджетов перед сном.');
+            } else if (data.get('age') === '18–24 года') {
+                recommendations.push('Молодым людям следует избегать кофеина и алкоголя перед сном, а также формировать привычку засыпать в одно и то же время.');
+            } else if (data.get('age') === '25–30 лет') {
+                recommendations.push('Взрослым людям полезно уделять внимание качеству матраса и подушки, а также проветривать комнату перед сном.');
+            } else if (data.get('age') === '31 год и старше') {
+                recommendations.push('Людям старше 31 года рекомендуется избегать переутомления, использовать успокаивающие техники, такие как йога или дыхательные упражнения.');
             }
 
-            // Based on sleep interruptions
-            if (sleepInterruption.length > 0) {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Чтобы улучшить качество сна, избегайте факторов, мешающих отдыху. Постарайтесь исключить использование гаджетов перед сном, уменьшить уровень шума и света в комнате, а также избегать стрессовых ситуаций и употребления кофеина или алкоголя вечером.</p>";
+            // Рекомендации по статусу
+            if (data.get('status') === 'Студент') {
+                recommendations.push('Студентам важно чередовать учебу с отдыхом и избегать ночных подготовок к экзаменам.');
+            } else if (data.get('status') === 'Работающий студент') {
+                recommendations.push('Работающим студентам стоит уделять внимание тайм-менеджменту, чтобы оставалось время для полноценного сна.');
+            } else if (data.get('status') === 'Работающий') {
+                recommendations.push('Работающим людям полезно завершать рабочие задачи за час до сна и выделять время для релаксации.');
             }
 
-            // Based on pre-sleep activity
-            if (preSleepActivity === "Гаджеты") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Ограничьте использование гаджетов за 30-60 минут до сна, так как экраны излучают синий свет, который мешает выработке мелатонина. Лучше всего посвятить это время расслабляющим занятиям, таким как чтение или медитация.</p>";
+            // Рекомендации по продолжительности сна
+            const sleepHours = data.get('sleep_hours');
+            if (sleepHours === 'Менее 5 часов') {
+                recommendations.push('Старайтесь увеличить продолжительность сна, так как менее 5 часов недостаточно для восстановления организма.');
+            } else if (sleepHours === '5–6 часов') {
+                recommendations.push('Попробуйте добавлять 30 минут к своему сну каждую неделю, чтобы достичь оптимального уровня.');
+            } else if (sleepHours === '6–7 часов') {
+                recommendations.push('Старайтесь ложиться спать немного раньше, чтобы достичь рекомендованных 7–8 часов сна.');
+            } else if (sleepHours === '7–8 часов') {
+                recommendations.push('Вы спите достаточно, поддерживайте этот режим для сохранения здоровья.');
+            } else if (sleepHours === 'Более 8 часов') {
+                recommendations.push('Если вы чувствуете сонливость при длительном сне, попробуйте сократить его до 7–8 часов.');
             }
 
-            // Based on sleep quality
-            if (sleepQuality === "1-2") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Плохое качество сна требует внимательного подхода. Увлажнение воздуха, использование удобной подушки, регулярная физическая активность и уменьшение стресса помогут вам улучшить сон.</p>";
+            // Рекомендации по графику сна
+            const sleepSchedule = data.get('sleep_schedule');
+            if (sleepSchedule === 'Всегда') {
+                recommendations.push('Продолжайте соблюдать регулярный график сна, это очень полезно для здоровья.');
+            } else if (sleepSchedule === 'Часто') {
+                recommendations.push('Старайтесь ложиться спать в одно и то же время каждый день для улучшения качества сна.');
+            } else if (sleepSchedule === 'Редко') {
+                recommendations.push('Установите для себя расписание сна и придерживайтесь его, чтобы организм привык к стабильности.');
+            } else if (sleepSchedule === 'Никогда') {
+                recommendations.push('Рассмотрите возможность изменения графика сна, так как нерегулярный сон может негативно влиять на здоровье.');
             }
 
-            // Based on morning headache
-            if (morningHeadache === "Часто" || morningHeadache === "Очень часто") {
-                recommendationsText += "<p><strong>Рекомендация:</strong> Частые головные боли могут быть связаны с плохим качеством сна или недостаточным количеством сна. Рекомендуется обратить внимание на комфорт в спальне, а также проконсультироваться с врачом, если проблема сохраняется.</p>";
+            // Рекомендации по факторам
+            const factors = data.getAll('factors');
+            if (factors.includes('Стресс или тревога')) {
+                recommendations.push('Используйте техники расслабления, такие как медитация или глубокое дыхание, чтобы уменьшить стресс перед сном.');
+            }
+            if (factors.includes('Шум')) {
+                recommendations.push('Рассмотрите возможность использования берушей или включения белого шума для блокировки внешних звуков.');
+            }
+            if (factors.includes('Свет')) {
+                recommendations.push('Используйте плотные шторы или маску для сна, чтобы уменьшить влияние света.');
+            }
+            if (factors.includes('Гаджеты')) {
+                recommendations.push('Ограничьте использование гаджетов за час до сна, так как они могут ухудшать качество сна.');
+            }
+            if (factors.includes('Кофеин или алкоголь')) {
+                recommendations.push('Избегайте употребления кофеина и алкоголя за 4–6 часов до сна.');
             }
 
-            recommendations.innerHTML = "<h2>Рекомендации:</h2>" + recommendationsText;
+            // Рекомендации по деятельности перед сном
+            const beforeSleep = data.get('before_sleep');
+            if (beforeSleep === 'Работа/учёба') {
+                recommendations.push('Старайтесь завершать рабочие и учебные задачи минимум за час до сна, чтобы мозг успел переключиться на отдых.');
+            } else if (beforeSleep === 'Чтение') {
+                recommendations.push('Чтение перед сном полезно, но избегайте слишком увлекательных или тревожных книг.');
+            } else if (beforeSleep === 'Гаджеты') {
+                recommendations.push('Ограничьте использование гаджетов перед сном, замените их расслабляющими занятиями, такими как медитация.');
+            } else if (beforeSleep === 'Расслабление') {
+                recommendations.push('Продолжайте практиковать расслабление перед сном, это помогает улучшить качество сна.');
+            } else if (beforeSleep === 'Спорт') {
+                recommendations.push('Избегайте интенсивных тренировок менее чем за 2 часа до сна, чтобы не нарушать процесс засыпания.');
+            }
+
+            // Рекомендации по качеству сна
+            const sleepQuality = data.get('sleep_quality');
+            if (sleepQuality === '1–2') {
+                recommendations.push('Обратитесь к специалисту, если ваш сон регулярно плохой, и попробуйте изменить образ жизни.');
+            } else if (sleepQuality === '3') {
+                recommendations.push('Попробуйте улучшить условия сна, такие как тишина, темнота и удобство кровати.');
+            } else if (sleepQuality === '4–5') {
+                recommendations.push('Обратите внимание на свой режим сна и устраните факторы, мешающие засыпанию.');
+            } else if (sleepQuality === '6–7') {
+                recommendations.push('Старайтесь поддерживать текущее качество сна, анализируйте, что помогает вам засыпать быстрее.');
+            } else if (sleepQuality === '8–10') {
+                recommendations.push('Ваш сон качественный, продолжайте соблюдать привычки, которые помогают вам хорошо спать.');
+            }
+
+            // Рекомендации по головной боли
+            const headache = data.get('headache');
+            if (headache === 'Редко') {
+                recommendations.push('Редкие головные боли могут быть связаны с позой сна, попробуйте улучшить поддержку шеи.');
+            } else if (headache === 'Иногда') {
+                recommendations.push('Иногда головные боли могут быть вызваны обезвоживанием, убедитесь, что вы пьете достаточно воды.');
+            } else if (headache === 'Часто') {
+                recommendations.push('Частые головные боли могут быть связаны с плохой осанкой или недостатком сна, обратитесь за консультацией.');
+            } else if (headache === 'Очень часто') {
+                recommendations.push('Очень частые головные боли требуют визита к врачу, так как могут быть симптомом скрытых проблем.');
+            }
+
+            // Отображение рекомендаций
+            const recommendationBlock = document.getElementById
+            ('recommendation-content');
+            recommendationBlock.innerHTML = recommendations.map(r => `<p>${r}</p>`).join('');
+            document.getElementById('recommendations').style.display = 'block';
         }
     </script>
-
 </body>
 </html>
